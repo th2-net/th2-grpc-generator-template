@@ -1,29 +1,29 @@
 # th2 gRPC generator template library
 
-This is the template project for creating custom gRPC libraries. It contains example proto messages and services. <br>
-Tool generates code from `.proto` files and uploads built packages (`.proto` files and generated code) to specified repositories.
+This is the template project for creating custom gRPC libraries. It contains **an** example **of** proto messages and services. <br>
+**The tool** generates code from `.proto` files and uploads built packages (`.proto` files and generated code) to **the** specified repositories.
 
-## How to transform template
-1. Create a directory with the same name as project name (use underscores instead of dashes) under `src/main/proto` directory (remove other files and directories if they exist).
-2. Place your custom `.proto` files in created directory. Pay attention to `package` specifier and `import` statements.
+## How to transform **the** template
+1. Create a directory with the same name as **the** project name (use underscores instead of dashes) under `src/main/proto` directory (remove other files and directories if they exist).
+2. Place your custom `.proto` files in **the** created directory. Pay attention to **both the** `package` specifier and **to the** `import` statements.
 3. Edit `release_version` and `vcs_url` properties in `gradle.properties` file.
-4. Edit `rootProject.name` variable in `settings.gradle` file. This will be the name of Java package.
-5. Edit `package_info.json` file in order to specify name and version for Python package (create file if it's absent).
-6. Edit parameters of `setup.py` in `setup` function invocation such as: `author`, `author_email`, `url`. Do not edit the others.
+4. Edit `rootProject.name` variable in `settings.gradle` file. This will be the name of **the** Java package.
+5. Edit `package_info.json` file in order to specify **its** name and **its** version for Python package (create **the** file **in case** it's absent).
+6. Edit parameters of `setup.py` in `setup` function invocation such as: `author`, `author_email`, `url`. Do not edit the **other's parameters**.
 7. Edit `README.md` file according to the new project.
 
-Note that the name of created directory under `src/main/proto` directory is used in Python (it's a package name).
+Note that the name of **the** created directory under `src/main/proto` directory is used in Python (it's a package name).
 
-## How to maintain project
-1. Make your changes.
-2. Up version of Java package in `gradle.properties` file.
-3. Up version of Python package in `package_info.json` file.
+## How to maintain **a** project
+1. **Perform the necessary** changes.
+2. **Update the package version of Java** in `gradle.properties` file.
+3. **Update the package version of Python** in `package_info.json` file.
 4. Commit everything.
 
 ## How to run project
 
 ### Java
-If you wish to manually create and publish package for Java, run these command:
+If you wish to manually create and publish **a** package for Java, run **the following commands**:
 ```
 gradle --no-daemon clean build publish artifactoryPublish \
        -Pbintray_user=${BINTRAY_USER} \
@@ -32,7 +32,7 @@ gradle --no-daemon clean build publish artifactoryPublish \
 `BINTRAY_USER` and `BINTRAY_KEY` are parameters for publishing.
 
 ### Python
-If you wish to manually create and publish package for Python:
+If you wish to manually create and publish **a** package for Python:
 1. Generate services from `.proto` files:
     - Download and build [th2 Python service generator](https://github.com/th2-net/th2-python-service-generator "th2-python-service-generator") project with Gradle:
         ```
