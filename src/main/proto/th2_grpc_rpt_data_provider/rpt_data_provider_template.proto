@@ -98,7 +98,7 @@ message RptMessage {
 
 message LastScannedObjectInfo {
   string id = 1;
-  google.protobuf.Timestamp timestamp = 2;
+  int64 timestamp_millis = 2;
   int64 scanCounter = 3;
 }
 
