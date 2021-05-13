@@ -97,12 +97,9 @@ message RptMessage {
 }
 
 message LastScannedObjectInfo {
-  oneof id {
-    EventID eventId = 1;
-    MessageID messageId = 2;
-  }
-  google.protobuf.Timestamp timestamp = 3;
-  int64 scanCounter = 4;
+  string id = 1;
+  google.protobuf.Timestamp timestamp = 2;
+  int64 scanCounter = 3;
 }
 
 message StringList {
