@@ -42,16 +42,16 @@ service RptDataProvider {
   rpc searchSseEvents (GrpcEventSearchRequest) returns (stream StreamResponse) {
   }
 
-  rpc filtersSseMessages (google.protobuf.Empty) returns (ListFilterName) {
+  rpc getMessagesFilters (google.protobuf.Empty) returns (ListFilterName) {
   }
 
-  rpc filtersSseEvents (google.protobuf.Empty) returns (ListFilterName) {
+  rpc getEventsFilters (google.protobuf.Empty) returns (ListFilterName) {
   }
 
-  rpc filterSseEvents (FilterName) returns (FilterInfo) {
+  rpc getEventFilterInfo (FilterName) returns (FilterInfo) {
   }
 
-  rpc filterSseMessages (FilterName) returns (FilterInfo) {
+  rpc getMessageFilterInfo (FilterName) returns (FilterInfo) {
   }
 
   rpc  matchEvent (MatchRequest) returns (IsMatched) {
