@@ -42,16 +42,16 @@ service RptDataProvider {
   rpc searchSseEvents (GrpcEventSearchRequest) returns (stream StreamResponse) {
   }
 
-  rpc filtersSseMessages (google.protobuf.Empty) returns (ListFilterName) {
+  rpc getMessagesFilters (google.protobuf.Empty) returns (ListFilterName) {
   }
 
-  rpc filtersSseEvents (google.protobuf.Empty) returns (ListFilterName) {
+  rpc getEventsFilters (google.protobuf.Empty) returns (ListFilterName) {
   }
 
-  rpc filterSseEvents (FilterName) returns (FilterInfo) {
+  rpc getEventFilterInfo (FilterName) returns (FilterInfo) {
   }
 
-  rpc filterSseMessages (FilterName) returns (FilterInfo) {
+  rpc getMessageFilterInfo (FilterName) returns (FilterInfo) {
   }
 
   rpc  matchEvent (MatchRequest) returns (IsMatched) {
@@ -96,32 +96,14 @@ message RptMessage {
   string body_base64 = 7;
 }
 
+message LastScannedObjectInfo {
+  string id = 1;
+  int64 timestamp_millis = 2;
+  int64 scanCounter = 3;
+}
 
 message StringList {
   repeated string list_string = 1;
-}
-
-message MessageList {
-  repeated string list_message = 1;
-}
-
-message EventList {
-  repeated string list_event = 1;
-}
-
-message Messages {
-  oneof elements {
-    StringList id_list = 1;
-    MessageList messages = 4;
-  }
-}
-
-
-message Events {
-  oneof elements {
-    StringList id_list = 1;
-    EventList messages = 4;
-  }
 }
 
 message IsMatched {
@@ -162,12 +144,10 @@ message Filter {
   repeated string values = 3;
 }
 
-
 enum TimeRelation {
   NEXT = 0;
   PREVIOUS = 1;
 }
-
 
 message MatchRequest {
   oneof id {
@@ -206,5 +186,6 @@ message StreamResponse {
     RptEvent event = 1;
     RptMessage message = 2;
     RptEventTreeNode event_tree_node = 3;
+    LastScannedObjectInfo last_scanned_object = 4;
   }
 }
