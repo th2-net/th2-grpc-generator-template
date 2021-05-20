@@ -99,7 +99,7 @@ message RptMessage {
 message LastScannedObjectInfo {
   string id = 1;
   int64 timestamp_millis = 2;
-  int64 scanCounter = 3;
+  int64 scan_counter = 3;
 }
 
 message StringList {
@@ -128,7 +128,7 @@ message ListFilterName {
 message Parameter {
   string name = 1;
   FilterParameterType type = 2;
-  google.protobuf.Any defaultValue = 3;
+  google.protobuf.Any default_value = 3;
   string hint = 4;
 }
 
@@ -151,8 +151,8 @@ enum TimeRelation {
 
 message MatchRequest {
   oneof id {
-    EventID eventId = 1;
-    MessageID messageId = 2;
+    EventID event_id = 1;
+    MessageID message_id = 2;
   }
   repeated Filter filters = 3;
 }
@@ -160,13 +160,13 @@ message MatchRequest {
 message GrpcEventSearchRequest {
   google.protobuf.Timestamp start_timestamp = 1;
   google.protobuf.Timestamp end_timestamp = 2;
-  EventID parentEvent = 3;
+  EventID parent_event = 3;
   TimeRelation search_direction = 4;
   EventID resume_from_id = 5;
   google.protobuf.Int32Value result_count_limit = 6;
-  google.protobuf.BoolValue keepOpen = 7;
-  google.protobuf.Int64Value limitForParent = 8;
-  google.protobuf.BoolValue metadataOnly = 9;
+  google.protobuf.BoolValue keep_open = 7;
+  google.protobuf.Int64Value limit_for_parent = 8;
+  google.protobuf.BoolValue metadata_only = 9;
   repeated Filter filters = 10;
 }
 
@@ -177,7 +177,7 @@ message GrpcMessageSearchRequest {
   TimeRelation search_direction = 4;
   google.protobuf.Int32Value result_count_limit = 5;
   StringList stream = 6;
-  google.protobuf.BoolValue  keepOpen = 7;
+  google.protobuf.BoolValue keep_open = 7;
   repeated Filter filters = 8;
 }
 
