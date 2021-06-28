@@ -19,7 +19,7 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "com.exactpro.th2.generator.grpc";
 
-service Foo {
+service FooService {
   rpc FooRequest(Foo) returns (Foo) {
   }
 }
