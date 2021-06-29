@@ -1,4 +1,4 @@
-# th2 gRPC generator template library
+# th2 gRPC generator template library (1.4.0)
 
 This is the template project for creating custom gRPC libraries. It contains an example of proto messages and services. <br>
 The tool generates code from `.proto` files and uploads built packages (`.proto` files and generated code) to the specified repositories.
@@ -48,3 +48,9 @@ If you wish to manually create and publish a package for Python:
     twine upload --repository-url ${PYPI_REPOSITORY_URL} --username ${PYPI_USER} --password ${PYPI_PASSWORD} dist/*
     ```
     `PYPI_REPOSITORY_URL`, `PYPI_USER` and `PYPI_PASSWORD` are parameters for publishing.
+   
+## Release notes
+
+### 1.4.0
+
++ Implement stubs creation for Python
