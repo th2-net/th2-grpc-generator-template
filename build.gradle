@@ -196,3 +196,9 @@ clean {
     delete genDir
     delete sharedDir
 }
+
+configurations {
+    compileClasspath {
+        resolutionStrategy.activateDependencyLocking()
+    }
+}
